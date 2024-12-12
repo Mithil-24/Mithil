@@ -1,0 +1,243 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle, #0b0c3d, #010112) fixed;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif; /* A futuristic font */
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Stars */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background-image: url('https://source.unsplash.com/1920x1080/?stars');
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(10, 10, 40, 0.9);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s, transform 0.3s;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(1, 1, 18, 0.9), rgba(0, 0, 50, 0.9));
+  animation: stars 100s linear infinite;
+  overflow: hidden;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.hero .btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Keyframes for stars */
+@keyframes stars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 10000px;
+  }
+}
+
+/* Section Headers */
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  color: #fff;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ffcc00;
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+/* About Section */
+.about {
+  background: linear-gradient(to right, #0b0c3d, #010112);
+  text-align: center;
+  padding: 4rem 0;
+  color: #ccc;
+}
+
+.about p {
+  margin: 0 auto 2rem;
+  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Skills Section */
+.skills {
+  background: radial-gradient(circle, #02021a, #000);
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skills li {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+/* Projects Section */
+.projects {
+  background: #010112;
+  padding: 4rem 0;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+}
+
+.project h3 {
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px #ffcc00, 0 0 16px #ffcc00;
+}
+
+.project p {
+  font-size: 1rem;
+}
+
+/* Contact Section */
+.contact {
+  background: linear-gradient(to right, #02021a, #010112);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #ffcc00;
+  text-shadow: 0 0 8px #ffcc00, 0 0 16px #ffcc00;
+}
+
+.contact a {
+  color: #00ffcc;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ffcc;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact a:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 12px #ffcc00;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
